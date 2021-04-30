@@ -8,4 +8,4 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 
 ### Workflow
-![example workflow]https://github.com/dchmerenko/python-project-lvl1/actions/workflows/make_lint.yml/badge.svg
+[![example workflow](https://github.com/dchmerenko/python-project-lvl1/actions/workflows/make_lint.yml/badge.svg)]
