@@ -1,7 +1,7 @@
 name: Run linter
 on: [push]
 jobs:
-  Run linter:
+  Run_linter:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
