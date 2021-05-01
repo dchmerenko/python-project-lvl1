@@ -1,16 +1,14 @@
 #!/usr/bin/env python
 """Brain-even main module."""
 
-
-from brain_games import even_game
-from brain_games.cli import welcome_user
+from brain_games.games import even_game
+from brain_games.lib import welcome_user
 
 
 def main():
     """Brain-even main function."""
-    print('Welcome to the Brain Games!')
-    name = welcome_user()
-    even_game.play(name)
+    user = welcome_user()
+    even_game.play(user)
 
 
 if __name__ == '__main__':

@@ -1,26 +1,39 @@
-"""Brain-game even_game functional module."""
+"""Brain-game calc_game functional module."""
 
-from random import randint
+import random
 
 import prompt
 from brain_games.config import MAX_NUMBER, TRIES_LIMIT
-from brain_games.lib import is_even
 
 
 def play(name):
     """
-    Play an even-odd game with the User.
+    Play a calculation game with the User.
 
     Args:
         name: User name
     """
-    print('Answer "yes" if the number is even, otherwise answer "no".')
+    operations = {
+        '+': lambda x, y: x + y,
+        '-': lambda x, y: x - y,
+        '*': lambda x, y: x * y,
+    }
+
+    print('What is the result of the expression?')
 
     for _ in range(TRIES_LIMIT):
-        number = randint(0, MAX_NUMBER)
-        correct_answer = 'yes' if is_even(number) else 'no'
+
+        a, b = (random.randint(0, MAX_NUMBER) for _ in range(2))
+        operator = random.choice(tuple(operations))
+
+        correct_answer = str(operations.get(operator)(a, b))
+
         user_answer = prompt.string(
-            'Question: {number}\nYour answer: '.format(number=number),
+            'Question: {a} {operator} {b}\nYour answer: '.format(
+                a=a,
+                b=b,
+                operator=operator,
+            ),
             empty=True,
         )
         if user_answer == correct_answer:

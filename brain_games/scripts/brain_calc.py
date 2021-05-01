@@ -2,15 +2,14 @@
 """Brain-calc main module."""
 
 
-from brain_games import calc_game
-from brain_games.cli import welcome_user
+from brain_games.games import calc_game
+from brain_games.lib import welcome_user
 
 
 def main():
     """Brain-calc main function."""
-    print('Welcome to the Brain Games!')
-    name = welcome_user()
-    calc_game.play(name)
+    user = welcome_user()
+    calc_game.play(user)
 
 
 if __name__ == '__main__':
