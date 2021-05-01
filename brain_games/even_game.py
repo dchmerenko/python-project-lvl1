@@ -28,11 +28,17 @@ def play(name):
         if user_answer == correct_answer:
             print('Correct!')
             continue
-        print(''.join(["'{user_answer}' is wrong answer ;(. ",
-                       "Correct answer was '{correct_answer}'.",
-                       ]).format(user_answer=user_answer,
-                                 correct_answer=correct_answer,
-                                 ))
+        print(
+            "'{user_answer}' is wrong answer ;(.".format(
+                user_answer=user_answer,
+            ),
+            end=' ',
+        )
+        print(
+            "Correct answer was '{correct_answer}'.".format(
+                correct_answer=correct_answer,
+            ),
+        )
         print("Let's try again, {name}!".format(name=name))
         break
     else:  # for - else. Run if no break occurs in for cycle.
