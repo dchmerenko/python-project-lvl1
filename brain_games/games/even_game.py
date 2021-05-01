@@ -4,7 +4,7 @@ from random import randint
 
 import prompt
 from brain_games.config import MAX_NUMBER, TRIES_LIMIT
-from brain_games.lib import is_even
+from brain_games.lib import is_even, process_wrong_answer
 
 
 def play(user):
@@ -12,14 +12,14 @@ def play(user):
     Play an even-odd game with the User.
 
     Args:
-        user: User name
+        user: User user
     """
     print('Answer "yes" if the number is even, otherwise answer "no".')
 
     for _ in range(TRIES_LIMIT):
-        question = generate_question()
-        correct_answer = calculate_answer(question)
-        user_answer = get_user_answer(question)
+        number = generate_question()
+        correct_answer = calculate_answer(number)
+        user_answer = get_user_answer(number)
         if user_answer == correct_answer:
             print('Correct!')
             continue
@@ -62,23 +62,3 @@ def get_user_answer(question):
     """
     print('Question: {question}'.format(question=question))
     return prompt.string('Your answer: ', empty=True)
-
-
-def process_wrong_answer(wrong_answer, right_answer):
-    """Print right and wrong answer.
-
-    Args:
-        wrong_answer: wrong answer
-        right_answer: right_answer
-    """
-    print(
-        "'{wrong_answer}' is wrong answer ;(.".format(
-            wrong_answer=wrong_answer,
-        ),
-        end=' ',
-    )
-    print(
-        "Correct answer was '{right_answer}'.".format(
-            right_answer=right_answer,
-        ),
-    )

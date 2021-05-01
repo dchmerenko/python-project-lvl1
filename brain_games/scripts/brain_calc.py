@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 """Brain-calc main module."""
 
-
 from brain_games.games import calc_game
 from brain_games.lib import welcome_user
 
