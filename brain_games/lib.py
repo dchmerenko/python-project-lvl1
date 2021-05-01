@@ -47,3 +47,18 @@ def process_wrong_answer(wrong_answer, right_answer):
             right_answer=right_answer,
         ),
     )
+
+
+def gcd(a, b):
+    """Calculate the Greatest Common Divisor.
+
+    Args:
+        a: integer number
+        b: integer number
+
+    Returns:
+        gcd
+    """
+    while b:
+        a, b = b, a % b
+    return abs(a)

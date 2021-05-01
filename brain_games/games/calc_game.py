@@ -36,7 +36,7 @@ def play(user):
 
 
 def generate_question(valid_operations):
-    """Return quiz number for calc-game.
+    """Return quiz numbers for calc-game.
 
     Args:
         valid_operations: tuple of valid operation signs, i.e '+', '-', '*'

@@ -12,7 +12,7 @@ def play(user):
     Play an even-odd game with the User.
 
     Args:
-        user: User user
+        user: User name
     """
     print('Answer "yes" if the number is even, otherwise answer "no".')
 
