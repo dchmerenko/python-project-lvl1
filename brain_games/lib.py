@@ -18,13 +18,13 @@ def is_even(number):
 
 def welcome_user():
     """
-    Prompt User user and print welcome message. Return User user.
+    Prompt User name and print welcome message. Return User name.
 
     Returns:
-         User user
+         User name
     """
     print('Welcome to the Brain Games!')
-    name = prompt.string('May I have your user? ')
+    name = prompt.string('May I have your name? ')
     print('Hello, {name}!'.format(name=name))
     return name
 
