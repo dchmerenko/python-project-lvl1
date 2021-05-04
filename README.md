@@ -11,7 +11,7 @@ Game video playback available [here](https://asciinema.org/a/foQgqN4XL7HYWIl7rHn
 [![Actions Status](https://github.com/dchmerenko/python-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/dchmerenko/python-project-lvl1/actions)
 
 ### Code Climate Maintainability Badge
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/dchmerenko/python-project-lvl1/maintainability)
 
 ### Workflow
 ![example workflow](https://github.com/dchmerenko/python-project-lvl1/actions/workflows/make_lint.yml/badge.svg)
