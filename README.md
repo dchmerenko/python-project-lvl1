@@ -6,7 +6,7 @@ Brain-games - simple terminal game package.
 2. brain-calc   - calculation game
 3. brain-even   - even-odd quiz
 4. brain-gcd    - guess the Great Common Divisor game
-5. brain-prime  - geuss is a number prime or not
+5. brain-prime  - guess is a number prime or not
 6. brain-progression - find a missed arithmetic progression term
 
 Game video playback available [here](https://asciinema.org/a/NPuzSvX9ckKNKBpnoWviyAtlI)
