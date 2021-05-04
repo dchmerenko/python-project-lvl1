@@ -88,6 +88,8 @@ def is_prime(number):
     Returns:
         Return True if number is prime else False
     """
+    if number < 2:
+        return False
     divisor = 2
     while divisor <= number ** 0.5:
         if number % divisor == 0:
