@@ -1,8 +1,10 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.1.0"
-description = ""
+description = "Brain-games package is a collection of easy math games."
 authors = ["dmitry chmerenko <dchmerenko@gmail.com>"]
+repository = "https://github.com/dchmerenko/python-project-lvl1"
+classifiers = []
 packages = [
   { include = "brain_games" },
 ]
