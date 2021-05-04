@@ -9,7 +9,7 @@ Brain-games - simple terminal game package.
 5. brain-prime  - geuss is a number prime or not
 6. brain-progression - find a missed arithmetic progression term
 
-Game video playback available [here](https://asciinema.org/a/Xmb5tDYKJzft7ti2hnPntbASo)
+Game video playback available [here](https://asciinema.org/a/NPuzSvX9ckKNKBpnoWviyAtlI)
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/dchmerenko/python-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/dchmerenko/python-project-lvl1/actions)
