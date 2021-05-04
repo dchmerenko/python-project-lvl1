@@ -62,3 +62,18 @@ def gcd(a, b):
     while b:
         a, b = b, a % b
     return abs(a)
+
+
+def arithmetic_progression(first, step, number=10):
+    """Calculate an arithmetic progression.
+
+    Args:
+        first: first element
+        step: step
+        number: quantity of elements
+
+    Returns:
+        List of elements of arithmetic progression
+    """
+    last = first + step * number + 1
+    return [str(_) for _ in range(first, last, step)]
