@@ -34,8 +34,7 @@ def generate_question():
     """Return two numbers for gcd-game.
 
     Returns:
-        a: random integer number
-        b: random integer number
+        random integer number generator
     """
     return (random.randint(0, MAX_NUMBER) for _ in range(2))
 

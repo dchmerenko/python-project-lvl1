@@ -77,3 +77,20 @@ def arithmetic_progression(first, step, number=10):
     """
     last = first + step * number + 1
     return [str(_) for _ in range(first, last, step)]
+
+
+def is_prime(number):
+    """Return True if number is prime else False.
+
+    Args:
+        number: integer number
+
+    Returns:
+        Return True if number is prime else False
+    """
+    divisor = 2
+    while divisor <= number ** 0.5:
+        if number % divisor == 0:
+            return False
+        divisor += 1
+    return True
