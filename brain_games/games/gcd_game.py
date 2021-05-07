@@ -3,7 +3,7 @@
 import random
 
 import prompt
-from brain_games.config import MAX_NUMBER, TRIES_LIMIT
+from brain_games.config import MAX_NUMBER, MIN_NUMBER, TRIES_LIMIT
 from brain_games.lib import gcd, process_wrong_answer
 
 
@@ -36,7 +36,7 @@ def generate_question():
     Returns:
         random integer number generator
     """
-    return (random.randint(0, MAX_NUMBER) for _ in range(2))
+    return (random.randint(MIN_NUMBER, MAX_NUMBER) for _ in range(2))
 
 
 def calculate_answer(a, b):

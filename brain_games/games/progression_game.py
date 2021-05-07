@@ -3,7 +3,7 @@
 import random
 
 import prompt
-from brain_games.config import HIDDEN_MARK, MAX_NUMBER, TRIES_LIMIT
+from brain_games.config import HIDDEN_MARK, MAX_NUMBER, MIN_NUMBER, TRIES_LIMIT
 from brain_games.lib import arithmetic_progression, process_wrong_answer
 
 
@@ -37,7 +37,7 @@ def generate_question():  # noqa: WPS210 Found too many local variables
         progression: random arithmetic progression with one hidden value
         hidden_value: hidden value of arithmetic progression
     """
-    first, step = (random.randint(0, MAX_NUMBER) for _ in range(2))
+    first, step = (random.randint(MIN_NUMBER, MAX_NUMBER) for _ in range(2))
     progression = arithmetic_progression(first, step)
     hidden_index = random.randint(0, len(progression) - 1)
     hidden_value = progression[hidden_index]

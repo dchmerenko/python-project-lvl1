@@ -3,7 +3,7 @@
 from random import randint
 
 import prompt
-from brain_games.config import MAX_NUMBER, TRIES_LIMIT
+from brain_games.config import MAX_NUMBER, MIN_NUMBER, TRIES_LIMIT
 from brain_games.lib import is_even, process_wrong_answer
 
 
@@ -36,7 +36,7 @@ def generate_question():
     Returns:
         random integer number
     """
-    return randint(0, MAX_NUMBER)
+    return randint(MIN_NUMBER, MAX_NUMBER)
 
 
 def calculate_answer(number):
