@@ -3,7 +3,7 @@
 import random
 
 import prompt
-from brain_games.config import MAX_NUMBER, TRIES_LIMIT
+from brain_games.config import MAX_NUMBER, MIN_NUMBER, TRIES_LIMIT
 from brain_games.lib import process_wrong_answer
 
 
@@ -46,7 +46,7 @@ def generate_question(valid_operations):
         b: random integer number
         operator: operator sign
     """
-    a, b = (random.randint(0, MAX_NUMBER) for _ in range(2))
+    a, b = (random.randint(MIN_NUMBER, MAX_NUMBER) for _ in range(2))
     operator = random.choice(valid_operations)
     return a, b, operator
 
