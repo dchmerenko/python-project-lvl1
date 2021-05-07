@@ -1,3 +1,8 @@
+
+[![Actions Status](https://github.com/dchmerenko/python-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/dchmerenko/python-project-lvl1/actions)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/dchmerenko/python-project-lvl1/maintainability)
+[![example workflow](https://github.com/dchmerenko/python-project-lvl1/actions/workflows/make_lint.yml/badge.svg)](https://github.com/dchmerenko/python-project-lvl1/actions/workflows/make_lint.yml)
+
 #### Educational project
 ["Python - programmer" by Hexlet](https://ru.hexlet.io/programs/python)
 
@@ -10,12 +15,3 @@ Brain-games - simple terminal game package.
 6. brain-progression - find a missed arithmetic progression term
 
 Game video playback available [here](https://asciinema.org/a/NPuzSvX9ckKNKBpnoWviyAtlI)
-
-### Hexlet tests and linter status:
-[![Actions Status](https://github.com/dchmerenko/python-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/dchmerenko/python-project-lvl1/actions)
-
-### Code Climate Maintainability Badge
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/dchmerenko/python-project-lvl1/maintainability)
-
-### Workflow
-[![example workflow](https://github.com/dchmerenko/python-project-lvl1/actions/workflows/make_lint.yml/badge.svg)](https://github.com/dchmerenko/python-project-lvl1/actions/workflows/make_lint.yml)
