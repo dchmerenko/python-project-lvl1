@@ -2,9 +2,8 @@
 
 import random
 
-import prompt
 from brain_games.config import MAX_NUMBER, MIN_NUMBER, TRIES_LIMIT
-from brain_games.lib import process_wrong_answer
+from brain_games.lib import get_user_answer, process_wrong_answer
 
 
 def play(user):
@@ -22,9 +21,9 @@ def play(user):
     print('What is the result of the expression?')
 
     for _ in range(TRIES_LIMIT):
-        a, b, operator = generate_question(tuple(operations))
-        correct_answer = calculate_answer(a, b, operator, operations)
-        user_answer = get_user_answer(a, b, operator)
+        question = generate_question(tuple(operations))
+        correct_answer = calculate_answer(question, operations)
+        user_answer = get_user_answer(question)
         if user_answer == correct_answer:
             print('Correct!')
             continue
@@ -42,40 +41,24 @@ def generate_question(valid_operations):
         valid_operations: tuple of valid operation signs, i.e '+', '-', '*'
 
     Returns:
-        a: random integer number
-        b: random integer number
-        operator: operator sign
+        question like '1 + 5'
     """
     a, b = (random.randint(MIN_NUMBER, MAX_NUMBER) for _ in range(2))
     operator = random.choice(valid_operations)
-    return a, b, operator
+    return '{a} {operator} {b}'.format(a=a, operator=operator, b=b)
 
 
-def calculate_answer(a, b, operator, operations):
+def calculate_answer(question, operations):
     """Calculate correct answer for even-game.
 
     Args:
-        a: number
-        b: number
-        operator: operator sign
+        question: question string
         operations: operation dict
 
     Returns:
         evaluation 'a operator b'
     """
+    a, operator, b = question.split()
+    a = int(a)
+    b = int(b)
     return str(operations.get(operator)(a, b))
-
-
-def get_user_answer(a, b, operator):
-    """Print question and return user answer.
-
-    Args:
-        a: number
-        b: number
-        operator: operator sign
-
-    Returns:
-        user answer
-    """
-    print('Question: {a} {operator} {b}'.format(a=a, b=b, operator=operator))
-    return prompt.string('Your answer: ', empty=True)

@@ -3,19 +3,6 @@
 import prompt
 
 
-def is_even(number):
-    """
-    Check if number is even.
-
-    Args:
-        number: this is a first param
-
-    Returns:
-        True if number is even, else False
-    """
-    return number % 2 == 0
-
-
 def welcome_user():
     """
     Prompt User name and print welcome message. Return User name.
@@ -27,6 +14,19 @@ def welcome_user():
     name = prompt.string('May I have your name? ')
     print('Hello, {name}!'.format(name=name))
     return name
+
+
+def get_user_answer(question):
+    """Print question and return user answer.
+
+    Args:
+        question: user question
+
+    Returns:
+        user answer
+    """
+    print('Question: {question}'.format(question=question))
+    return prompt.string('Your answer: ', empty=True)
 
 
 def process_wrong_answer(wrong_answer, right_answer):
@@ -77,6 +77,19 @@ def arithmetic_progression(first, step, number=10):
     """
     last = first + step * number + 1
     return [str(_) for _ in range(first, last, step)]
+
+
+def is_even(number):
+    """
+    Check if number is even.
+
+    Args:
+        number: this is a first param
+
+    Returns:
+        True if number is even, else False
+    """
+    return number % 2 == 0
 
 
 def is_prime(number):
