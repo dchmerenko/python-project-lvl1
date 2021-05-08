@@ -2,7 +2,6 @@
 
 from random import randint
 
-import prompt
 from brain_games.config import MAX_NUMBER, MIN_NUMBER, TRIES_LIMIT
 from brain_games.lib import get_user_answer, is_even, process_wrong_answer
 

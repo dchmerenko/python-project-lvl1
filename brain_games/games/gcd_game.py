@@ -2,7 +2,6 @@
 
 import random
 
-import prompt
 from brain_games.config import MAX_NUMBER, MIN_NUMBER, TRIES_LIMIT
 from brain_games.lib import gcd, get_user_answer, process_wrong_answer
 
@@ -36,7 +35,8 @@ def generate_question():
     Returns:
         string of two random integer number
     """
-    a, b = tuple(random.randint(MIN_NUMBER, MAX_NUMBER) for _ in range(2))
+    a = random.randint(MIN_NUMBER, MAX_NUMBER)
+    b = random.randint(MIN_NUMBER, MAX_NUMBER)
     question = '{a} {b}'.format(a=a, b=b)
     args = (a, b)
     return question, args

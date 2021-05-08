@@ -2,9 +2,12 @@
 
 import random
 
-import prompt
 from brain_games.config import HIDDEN_MARK, MAX_NUMBER, MIN_NUMBER, TRIES_LIMIT
-from brain_games.lib import arithmetic_progression, get_user_answer, process_wrong_answer
+from brain_games.lib import (
+    arithmetic_progression,
+    get_user_answer,
+    process_wrong_answer,
+)
 
 
 def play(user):
