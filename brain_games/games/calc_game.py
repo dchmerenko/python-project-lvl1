@@ -21,8 +21,8 @@ def play(user):
     print('What is the result of the expression?')
 
     for _ in range(TRIES_LIMIT):
-        question = generate_question(tuple(operations))
-        correct_answer = calculate_answer(question, operations)
+        question, args = generate_question(tuple(operations))
+        correct_answer = calculate_answer(args, operations)
         user_answer = get_user_answer(question)
         if user_answer == correct_answer:
             print('Correct!')
@@ -41,24 +41,25 @@ def generate_question(valid_operations):
         valid_operations: tuple of valid operation signs, i.e '+', '-', '*'
 
     Returns:
-        question like '1 + 5'
+        question: '10 + 5'
+        args: (10, 5, '+')
     """
     a, b = (random.randint(MIN_NUMBER, MAX_NUMBER) for _ in range(2))
     operator = random.choice(valid_operations)
-    return '{a} {operator} {b}'.format(a=a, operator=operator, b=b)
+    question = '{a} {operator} {b}'.format(a=a, operator=operator, b=b)
+    args = a, b, operator
+    return question, args
 
 
-def calculate_answer(question, operations):
+def calculate_answer(args, operations):
     """Calculate correct answer for even-game.
 
     Args:
-        question: question string
+        args: (a, b, operator)
         operations: operation dict
 
     Returns:
         evaluation 'a operator b'
     """
-    a, operator, b = question.split()
-    a = int(a)
-    b = int(b)
+    a, b, operator = args
     return str(operations.get(operator)(a, b))

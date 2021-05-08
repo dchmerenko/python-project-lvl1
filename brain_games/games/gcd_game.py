@@ -4,7 +4,7 @@ import random
 
 import prompt
 from brain_games.config import MAX_NUMBER, MIN_NUMBER, TRIES_LIMIT
-from brain_games.lib import gcd, process_wrong_answer
+from brain_games.lib import gcd, get_user_answer, process_wrong_answer
 
 
 def play(user):
@@ -17,9 +17,9 @@ def play(user):
     print('Find the greatest common divisor of given numbers.')
 
     for _ in range(TRIES_LIMIT):
-        a, b = generate_question()
-        correct_answer = calculate_answer(a, b)
-        user_answer = get_user_answer(a, b)
+        question, args = generate_question()
+        correct_answer = calculate_answer(args)
+        user_answer = get_user_answer(question)
         if user_answer == correct_answer:
             print('Correct!')
             continue
@@ -34,33 +34,22 @@ def generate_question():
     """Return two numbers for gcd-game.
 
     Returns:
-        random integer number generator
+        string of two random integer number
     """
-    return (random.randint(MIN_NUMBER, MAX_NUMBER) for _ in range(2))
+    a, b = tuple(random.randint(MIN_NUMBER, MAX_NUMBER) for _ in range(2))
+    question = '{a} {b}'.format(a=a, b=b)
+    args = (a, b)
+    return question, args
 
 
-def calculate_answer(a, b):
+def calculate_answer(args):
     """Calculate correct answer for gcd-game.
 
     Args:
-        a: number
-        b: number
+        args: (a, b)
 
     Returns:
         the greatest common divisor
     """
+    a, b = args
     return str(gcd(a, b))
-
-
-def get_user_answer(a, b):
-    """Print question and return user answer.
-
-    Args:
-        a: number
-        b: number
-
-    Returns:
-        user answer
-    """
-    print('Question: {a} {b}'.format(a=a, b=b))
-    return prompt.string('Your answer: ', empty=True)

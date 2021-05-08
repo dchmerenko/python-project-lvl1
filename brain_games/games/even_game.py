@@ -4,7 +4,7 @@ from random import randint
 
 import prompt
 from brain_games.config import MAX_NUMBER, MIN_NUMBER, TRIES_LIMIT
-from brain_games.lib import is_even, process_wrong_answer
+from brain_games.lib import get_user_answer, is_even, process_wrong_answer
 
 
 def play(user):
@@ -17,9 +17,9 @@ def play(user):
     print('Answer "yes" if the number is even, otherwise answer "no".')
 
     for _ in range(TRIES_LIMIT):
-        number = generate_question()
+        question, number = generate_question()
         correct_answer = calculate_answer(number)
-        user_answer = get_user_answer(number)
+        user_answer = get_user_answer(question)
         if user_answer == correct_answer:
             print('Correct!')
             continue
@@ -36,7 +36,8 @@ def generate_question():
     Returns:
         random integer number
     """
-    return randint(MIN_NUMBER, MAX_NUMBER)
+    number = randint(MIN_NUMBER, MAX_NUMBER)
+    return str(number), number
 
 
 def calculate_answer(number):
@@ -49,16 +50,3 @@ def calculate_answer(number):
         yes or no if number is even
     """
     return 'yes' if is_even(number) else 'no'
-
-
-def get_user_answer(question):
-    """Print question and return user answer.
-
-    Args:
-        question: question
-
-    Returns:
-        user answer
-    """
-    print('Question: {question}'.format(question=question))
-    return prompt.string('Your answer: ', empty=True)

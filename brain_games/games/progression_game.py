@@ -4,7 +4,7 @@ import random
 
 import prompt
 from brain_games.config import HIDDEN_MARK, MAX_NUMBER, MIN_NUMBER, TRIES_LIMIT
-from brain_games.lib import arithmetic_progression, process_wrong_answer
+from brain_games.lib import arithmetic_progression, get_user_answer, process_wrong_answer
 
 
 def play(user):
@@ -17,9 +17,9 @@ def play(user):
     print('Find the missed element of Arithmetic progression.')
 
     for _ in range(TRIES_LIMIT):
-        hidden_value, progression = generate_question()
+        question, hidden_value = generate_question()
         correct_answer = calculate_answer(hidden_value)
-        user_answer = get_user_answer(progression)
+        user_answer = get_user_answer(question)
         if user_answer == correct_answer:
             print('Correct!')
             continue
@@ -42,7 +42,7 @@ def generate_question():  # noqa: WPS210 Found too many local variables
     hidden_index = random.randint(0, len(progression) - 1)
     hidden_value = progression[hidden_index]
     progression[hidden_index] = HIDDEN_MARK
-    return hidden_value, ' '.join(progression)
+    return ' '.join(progression), hidden_value
 
 
 def calculate_answer(hidden_value):
@@ -55,16 +55,3 @@ def calculate_answer(hidden_value):
         hidden_value: hidden value of arithmetic progression
     """
     return hidden_value
-
-
-def get_user_answer(progression):
-    """Print question and return user answer.
-
-    Args:
-        progression: arithmetic progression with one hidden value
-
-    Returns:
-        user answer
-    """
-    print('Question: {progression}'.format(progression=progression))
-    return prompt.string('Your answer: ', empty=True)
