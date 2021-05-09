@@ -2,7 +2,7 @@
 """Brain-even main module."""
 
 from brain_games.games import even_game
-from brain_games.lib import welcome_user
+from brain_games.out import welcome_user
 
 
 def main():

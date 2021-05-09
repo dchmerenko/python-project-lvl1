@@ -1,53 +1,5 @@
 """Brain-games support function library module."""
 
-import prompt
-
-
-def welcome_user():
-    """
-    Prompt User name and print welcome message. Return User name.
-
-    Returns:
-         User name
-    """
-    print('Welcome to the Brain Games!')
-    name = prompt.string('May I have your name? ')
-    print('Hello, {name}!'.format(name=name))
-    return name
-
-
-def get_user_answer(question):
-    """Print question and return user answer.
-
-    Args:
-        question: user question
-
-    Returns:
-        user answer
-    """
-    print('Question: {question}'.format(question=question))
-    return prompt.string('Your answer: ', empty=True)
-
-
-def process_wrong_answer(wrong_answer, right_answer):
-    """Print right and wrong answer.
-
-    Args:
-        wrong_answer: wrong answer
-        right_answer: right_answer
-    """
-    print(
-        "'{wrong_answer}' is wrong answer ;(.".format(
-            wrong_answer=wrong_answer,
-        ),
-        end=' ',
-    )
-    print(
-        "Correct answer was '{right_answer}'.".format(
-            right_answer=right_answer,
-        ),
-    )
-
 
 def gcd(a, b):
     """Calculate the Greatest Common Divisor.
