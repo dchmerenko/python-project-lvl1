@@ -2,8 +2,14 @@
 
 import random
 
-from brain_games.config import MAX_NUMBER, MIN_NUMBER, TRIES_LIMIT, operations
+from brain_games.config import MAX_NUMBER, MIN_NUMBER, TRIES_LIMIT
 from brain_games.out import base_play
+
+operations = {
+    '+': lambda x, y: x + y,
+    '-': lambda x, y: x - y,
+    '*': lambda x, y: x * y,
+}
 
 start_msg = 'What is the result of the expression?'
 
