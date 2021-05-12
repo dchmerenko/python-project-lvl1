@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 """Brain-progression main module."""
 
-from brain_games.games import progression_game
+from brain_games.games import progression
 
 
 def main():
     """Brain-even main function."""
-    progression_game.play()
+    progression.play()
 
 
 if __name__ == '__main__':

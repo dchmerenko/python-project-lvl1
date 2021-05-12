@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 """Brain-calc main module."""
 
-from brain_games.games import calc_game
+from brain_games.games import calc
 
 
 def main():
     """Brain-calc main function."""
-    calc_game.play()
+    calc.play()
 
 
 if __name__ == '__main__':

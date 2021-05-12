@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 """Brain-prime main module."""
 
-from brain_games.games import prime_game
+from brain_games.games import prime
 
 
 def main():
     """Brain-prime main function."""
-    prime_game.play()
+    prime.play()
 
 
 if __name__ == '__main__':
