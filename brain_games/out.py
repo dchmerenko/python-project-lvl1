@@ -4,6 +4,18 @@
 import prompt
 
 
+def welcome_user():
+    """Prompt User name and print welcome message.
+
+    Returns:
+         User name
+    """
+    print('Welcome to the Brain Games!')
+    user = prompt.string('May I have your name? ')
+    print('Hello, {0}!'.format(user))
+    return user
+
+
 def base_play(*, start_msg, tries_limit, get_question_answer):
     """Return Base play function.
 
@@ -12,10 +24,7 @@ def base_play(*, start_msg, tries_limit, get_question_answer):
         tries_limit: tries limit
         get_question_answer: question-answer generator
     """
-    print('Welcome to the Brain Games!')
-    user = prompt.string('May I have your name? ')
-    print('Hello, {0}!'.format(user))
-
+    user = welcome_user()
     print(start_msg)
 
     for _ in range(tries_limit):
