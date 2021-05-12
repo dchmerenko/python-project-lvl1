@@ -18,28 +18,17 @@ def play():
     return base_play(
         start_msg=start_msg,
         tries_limit=TRIES_LIMIT,
-        generate_question=generate_question,
-        calculate_answer=calculate_answer,
+        get_question_answer=get_question_answer,
     )
 
 
-def generate_question():
-    """Return quiz number for even-game.
+def get_question_answer():
+    """Return question and answer for even-game.
 
     Returns:
-        random integer number
+        question: random integer number
+        answer: 'yes' or 'no' if number is even
     """
     number = randint(MIN_NUMBER, MAX_NUMBER)
-    return str(number), number
-
-
-def calculate_answer(number):
-    """Calculate correct answer for even-game.
-
-    Args:
-        number: number
-
-    Returns:
-        yes or no if number is even
-    """
-    return 'yes' if is_even(number) else 'no'
+    answer = 'yes' if is_even(number) else 'no'
+    return str(number), answer

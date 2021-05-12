@@ -16,7 +16,7 @@ def gcd(a, b):
     return abs(a)
 
 
-def arithmetic_progression(first, step, number=10):
+def get_arithmetic_progression(first, step, number=10):
     """Calculate an arithmetic progression.
 
     Args:

@@ -18,28 +18,17 @@ def play():
     return base_play(
         start_msg=start_msg,
         tries_limit=TRIES_LIMIT,
-        generate_question=generate_question,
-        calculate_answer=calculate_answer,
+        get_question_answer=get_question_answer,
     )
 
 
-def generate_question():
-    """Return numbers for prime-game.
+def get_question_answer():
+    """Return question and answer for prime-game.
 
     Returns:
-        random integer number
+        question: random integer number
+        answer: 'yes' if the number is prime else 'no'
     """
     number = random.randint(MIN_NUMBER, MAX_NUMBER)
-    return str(number), number
-
-
-def calculate_answer(number):
-    """Calculate correct answer for prime-game.
-
-    Args:
-        number: integer number
-
-    Returns:
-        'yes' if the number is prime else 'no'
-    """
-    return 'yes' if is_prime(number) else 'no'
+    answer = 'yes' if is_prime(number) else 'no'
+    return str(number), answer

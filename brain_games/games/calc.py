@@ -17,33 +17,19 @@ def play():
     return base_play(
         start_msg=start_msg,
         tries_limit=TRIES_LIMIT,
-        generate_question=generate_question,
-        calculate_answer=calculate_answer,
+        get_question_answer=get_question_answer,
     )
 
 
-def generate_question():
-    """Return quiz numbers for calc-game.
+def get_question_answer():
+    """Return question and answer for calc-game.
 
     Returns:
         question: '10 + 5'
-        args: (10, 5, '+')
+        answer: '15'
     """
     a, b = (random.randint(MIN_NUMBER, MAX_NUMBER) for _ in range(2))
     operator = random.choice(tuple(operations))
     question = '{a} {operator} {b}'.format(a=a, operator=operator, b=b)
-    args = a, b, operator
-    return question, args
-
-
-def calculate_answer(args):
-    """Calculate correct answer for even-game.
-
-    Args:
-        args: (a, b, operator)
-
-    Returns:
-        evaluation 'a operator b'
-    """
-    a, b, operator = args
-    return str(operations.get(operator)(a, b))
+    answer = str(operations.get(operator)(a, b))
+    return question, answer

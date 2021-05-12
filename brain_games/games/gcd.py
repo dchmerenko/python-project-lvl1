@@ -18,32 +18,19 @@ def play():
     return base_play(
         start_msg=start_msg,
         tries_limit=TRIES_LIMIT,
-        generate_question=generate_question,
-        calculate_answer=calculate_answer,
+        get_question_answer=get_question_answer,
     )
 
 
-def generate_question():
-    """Return two numbers for gcd-game.
+def get_question_answer():
+    """Return question and answer for gcd-game.
 
     Returns:
-        string of two random integer number
+        question: two random integer numbers
+        answer: the greatest common divisor
     """
     a = random.randint(MIN_NUMBER, MAX_NUMBER)
     b = random.randint(MIN_NUMBER, MAX_NUMBER)
     question = '{a} {b}'.format(a=a, b=b)
-    args = (a, b)
-    return question, args
-
-
-def calculate_answer(args):
-    """Calculate correct answer for gcd-game.
-
-    Args:
-        args: (a, b)
-
-    Returns:
-        the greatest common divisor
-    """
-    a, b = args
-    return str(gcd(a, b))
+    answer = str(gcd(a, b))
+    return question, answer
