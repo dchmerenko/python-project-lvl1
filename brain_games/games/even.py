@@ -3,7 +3,6 @@
 from random import randint
 
 from brain_games.config import MAX_NUMBER, MIN_NUMBER, TRIES_LIMIT
-from brain_games.lib import is_even
 from brain_games.out import base_play
 
 start_msg = 'Answer "yes" if the number is even, otherwise answer "no".'
@@ -32,3 +31,16 @@ def get_question_answer():
     number = randint(MIN_NUMBER, MAX_NUMBER)
     answer = 'yes' if is_even(number) else 'no'
     return str(number), answer
+
+
+def is_even(number):
+    """
+    Check if number is even.
+
+    Args:
+        number: this is a first param
+
+    Returns:
+        True if number is even, else False
+    """
+    return number % 2 == 0

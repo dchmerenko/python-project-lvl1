@@ -3,7 +3,6 @@
 import random
 
 from brain_games.config import MAX_NUMBER, MIN_NUMBER, TRIES_LIMIT
-from brain_games.lib import gcd
 from brain_games.out import base_play
 
 start_msg = 'Find the greatest common divisor of given numbers.'
@@ -34,3 +33,18 @@ def get_question_answer():
     question = '{a} {b}'.format(a=a, b=b)
     answer = str(gcd(a, b))
     return question, answer
+
+
+def gcd(a, b):
+    """Calculate the Greatest Common Divisor.
+
+    Args:
+        a: integer number
+        b: integer number
+
+    Returns:
+        gcd
+    """
+    while b:
+        a, b = b, a % b
+    return abs(a)

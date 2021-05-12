@@ -3,7 +3,6 @@
 import random
 
 from brain_games.config import MAX_NUMBER, MIN_NUMBER, TRIES_LIMIT
-from brain_games.lib import is_prime
 from brain_games.out import base_play
 
 start_msg = 'Answer "yes" if given number is prime. Otherwise answer "no".'
@@ -32,3 +31,22 @@ def get_question_answer():
     number = random.randint(MIN_NUMBER, MAX_NUMBER)
     answer = 'yes' if is_prime(number) else 'no'
     return str(number), answer
+
+
+def is_prime(number):
+    """Return True if number is prime else False.
+
+    Args:
+        number: integer number
+
+    Returns:
+        Return True if number is prime else False
+    """
+    if number < 2:
+        return False
+    divisor = 2
+    while divisor <= number ** 0.5:
+        if number % divisor == 0:
+            return False
+        divisor += 1
+    return True
