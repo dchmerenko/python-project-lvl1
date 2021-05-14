@@ -3,7 +3,7 @@
 import random
 
 from brain_games.config import MAX_NUMBER, MIN_NUMBER, TRIES_LIMIT
-from brain_games.out import base_play
+from brain_games.core import base_play
 
 start_msg = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 

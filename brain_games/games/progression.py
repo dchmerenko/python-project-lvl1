@@ -3,7 +3,7 @@
 import random
 
 from brain_games.config import HIDDEN_MARK, MAX_NUMBER, MIN_NUMBER, TRIES_LIMIT
-from brain_games.out import base_play
+from brain_games.core import base_play
 
 start_msg = 'Find the missed element of Arithmetic progression.'
 

@@ -3,7 +3,7 @@
 from random import randint
 
 from brain_games.config import MAX_NUMBER, MIN_NUMBER, TRIES_LIMIT
-from brain_games.out import base_play
+from brain_games.core import base_play
 
 start_msg = 'Answer "yes" if the number is even, otherwise answer "no".'
 
